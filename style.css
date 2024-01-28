@@ -1,0 +1,615 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 24px;
+    background-color: hsl(206, 45%, 15%); /*hsl(206, 45%, 15%)*/
+    color: white;
+    margin: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+button {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
+            /*////////////////////////
+            // MENU CONTAINERS HERE //
+            ////////////////////////*/
+.select-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 30px;
+    margin-bottom: 8px;
+}
+.num-players-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 25px;
+    margin-bottom: 8px;
+}
+/*///////////////*/
+
+
+            /*//////////////////////
+            // MENU WRAPPERS HERE //
+            //////////////////////*/
+.menu-big-wrappers {
+    user-select: none;
+    transition: 0.5s ease;
+    color: white;
+    border-radius: 50px;
+    padding: 12px 0;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+}
+.menu-small-wrappers {
+    user-select: none;
+    transition: 0.5s ease;
+    background-color: hsl(203, 28%, 79%);
+    color: white;
+    border-radius: 50px;
+    padding: 12px 0;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+}
+.menu-small-wrappers:hover {
+    background-color: hsl(205, 37%, 55%);
+}
+.menu-big-wrappers:hover {
+    background-color: hsl(205, 37%, 55%);
+}
+.active-wrappers {
+    background-color: hsl(205, 30%, 27%);
+}
+.disabled-wrappers {
+    background-color: hsl(203, 28%, 79%);
+}
+#startGame {
+    user-select: none;
+    transition: 0.5s ease;
+    background-color: hsl(37, 98%, 54%);
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 15px 0;
+    margin-top: 5px;
+    width: 100%;
+    border-radius: 50px;
+    border: 0;
+    cursor: pointer;
+}
+#startGame:hover {
+    background-color: hsl(36, 100%, 65%);
+}
+
+            /*//////////////////
+            // MENU TEXT HERE //
+            //////////////////*/
+.menu-label {
+    color: hsl(203, 28%, 52%);
+    font-size: 20px;
+}
+#nothing {
+    display: none;
+}
+
+            /*////////////////////////
+            // GAME CONTAINERS HERE //
+            ////////////////////////*/
+
+#menuContainer {
+    background-color: white;
+    display: flex; /* flex */
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 18px;
+    padding: 58px 52px 56px;
+    border-radius: 14px;
+    width: 655px;
+    max-width: 100%;
+}
+#menuTitle {
+    display: flex;
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+#gameContainer {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 1110px;
+    max-width: 100%;
+}
+#navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 26px;
+    margin-bottom: 90px;
+}
+#navBtnFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+#circlesContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 580px;
+    margin-top: 0px;
+    margin-bottom: 90px;
+    gap: 8px; /*20*/
+}
+#singleplayerStats {
+    width: 530px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+} 
+#multiPlayerStats {
+    display: none;
+    align-items: center;
+    justify-content: center; /* space between */
+    width: 100%;
+    max-width: 100%;
+    height: 72px;
+    gap: 22px;
+    margin-bottom: 30px;
+}
+.player-coll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 261px;  /* 100% */
+    height: 100%;
+}
+
+            /*//////////////////////
+            // GAME WRAPPERS HERE //
+            //////////////////////*/
+#restartBtn {
+    user-select: none;
+    transition: 0.3s ease;
+    background-color: hsl(37, 98%, 54%);
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 11px 26px;
+    border-radius: 50px;
+    border: 0;
+    cursor: pointer;
+}
+#restartBtn:hover {
+    background-color: hsl(36, 100%, 65%);
+}
+#newGameBtn {
+    user-select: none;
+    transition: 0.3s ease;
+    background-color: hsl(203, 25%, 90%);
+    color: hsl(205, 30%, 27%);
+    font-size: 20px;
+    font-weight: 700;
+    padding: 11px 25px;
+    border-radius: 50px;
+    border: 0;
+    cursor: pointer;
+}
+#newGameBtn:hover {
+    background-color: hsl(205, 37%, 55%);
+    color: white;
+}
+#mobileMenuBtn {
+    display: none;
+}
+
+.disabled-circle {
+    pointer-events: none;
+}
+.circle-inside {
+    background-color: transparent;
+    width: 88px;
+    height: 88px; /*88 124*/
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 45px; /* 65 */
+}
+.circle-outside {
+    cursor: pointer;
+    position: fixed;
+    display: flex;
+    transition: 0.3s ease;
+    background-color: hsl(205, 30%, 27%);
+    color: transparent;
+    width: 88px;
+    height: 88px;
+    border-radius: 100px;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+}
+.circle-outside:hover {
+    background-color: hsl(203, 28%, 55%);
+}
+
+#timeWrapper, #movesWrapper {
+    background-color: hsl(203, 25%, 90%);
+    padding: 0px 24px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.player-wrapper {
+    background-color: hsl(203, 25%, 90%);
+    padding: 20px;
+    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.player-triangle {
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-bottom: 18px solid hsl(37, 98%, 54%);
+}
+
+            /*//////////////////
+            // GAME TEXT HERE //
+            //////////////////*/
+#gameTitle {
+    color: black;
+    font-size: 40px;
+}
+.stats-label {
+    color: hsl(203, 28%, 54%);
+    font-size: 18px;
+}
+.stats-data {
+    color: hsl(205, 30%, 27%);
+    font-size: 32px;
+}
+.player-label, .end-txt, .player-end-txt {
+    font-size: 18px;
+    color: hsl(203, 28%, 54%);
+}
+.player-number, .end-stat-txt, .player-stat-txt {
+    color: hsl(205, 30%, 27%);
+    font-size: 34px;
+}
+.current-turn {
+    color: black;
+    font-size: 13px;
+    letter-spacing: 5px;
+    margin-top: 20px;
+}
+.circle-text {
+    color: transparent;
+}
+
+            /*//////////////////////
+            // MODAL CONTENT HERE //
+            //////////////////////*/
+#endModal, #mobileMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: hsla(0, 0%, 0%, 0.25);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+#endWrapper {
+    background-color: white;
+    padding: 60px 56px 66px;
+    width: 655px;
+    max-width: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#mobileWrapper {
+    background-color: white;
+    padding: 25px 20px;
+    border-radius: 12px;
+    height: 230px;
+    width: 350px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.end-stat-wrapper, .player-stat-wrapper {
+    background-color: hsl(203, 25%, 90%);
+    width: 100%;
+    padding: 16px 30px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px;
+    margin: 7px 0;
+}
+.end-stat-wrapper {
+    display: flex;
+}
+.player-stat-wrapper {
+    display: none;
+}
+#endBtnFlex {
+    margin-top: 34px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+#endRestartBtn, #mobileRestartBtn {
+    background-color: hsl(37, 98%, 54%);
+    color: white;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+#endRestartBtn:hover, #mobileRestartBtn:hover {
+    background-color: hsl(36, 100%, 65%);
+}
+#endNewGame, .mobile-grey-btns {
+    background-color: hsl(203, 25%, 90%);
+    color: hsl(205, 30%, 27%);
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+#endNewGame:hover, .mobile-grey-btns:hover {
+    background-color: hsl(203, 28%, 54%);
+    color: white;
+}
+#endTitle {
+    color: hsl(206, 45%, 15%);
+    font-size: 48px;
+}
+.end-margins {
+    margin-top: 10px;
+    margin-bottom: 33px;
+}
+
+@media only screen and (max-width: 1024px) {
+    #gameContainer {
+        width: 700px;
+    }
+    #navBar {
+        margin-top: 50px;
+    }
+    .current-turn {
+        display: none;
+    }
+    #circlesContainer {
+        margin-bottom: 70px;
+    }
+    #multiPlayerStats {
+        height: 100px;
+        gap: 22px;
+        margin-bottom: 30px;
+    }
+    .player-wrapper {
+        border-radius: 4px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+    }
+    .player-label {
+        font-size: 16px;
+        color: hsl(203, 28%, 54%);
+    }
+    .player-number {
+        color: hsl(205, 30%, 27%);
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    body {
+        margin: 0;
+    }
+    #menuContainer {
+        gap: 10px;
+        padding: 24px;
+        width: 350px;
+    }
+    .select-container {
+        gap: 15px;
+        margin-bottom: 8px;
+    }
+    .num-players-container {
+        gap: 15px;
+        margin-bottom: 8px;
+    }
+    .menu-big-wrappers {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+    .menu-small-wrappers {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+    #startGame {
+        font-size: 18px;
+        padding: 10px 0;
+        margin-top: 16px;
+    }
+    .menu-label {
+        font-size: 16px;
+    }
+
+    #gameContainer {
+        width: 350px;
+        max-width: 100%;
+    }
+    #navbar {
+        margin-top: 0px;
+        margin-bottom: 75px;
+    }
+    #gameTitle {
+        font-size: 26px;
+    }
+    #restartBtn, #newGameBtn {
+        display: none;
+    }
+    #mobileMenuBtn {
+        display: block;
+        user-select: none;
+        transition: 0.3s ease;
+        background-color: hsl(37, 98%, 54%);
+        color: white;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 12px 30px;
+        border-radius: 50px;
+        border: 0;
+        cursor: pointer;
+    }
+    #mobileMenuBtn:hover {
+        background-color: hsl(36, 100%, 65%);
+    }
+    
+    #timeWrapper, #movesWrapper {
+        gap: 2px;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .player-wrapper {
+        padding: 40px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .player-triangle {
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 12px solid hsl(37, 98%, 54%);
+    }
+    #circlesContainer {
+        max-width: 580px;
+        margin-bottom: 90px;
+        gap: 8px; /*20*/
+    }
+    #singleplayerStats {
+        max-width: 100%;
+        width: 530px;
+        height: 85px;
+        gap: 34px;
+    } 
+    #multiPlayerStats {
+        width: 100%;
+        max-width: 100%;
+        height: 72px;
+        gap: 25px;
+    }
+    .player-coll {
+        width: 261px;  /* 100% */
+        height: 100%;
+    }
+    .player-number, .end-stat-txt, .player-stat-txt {
+        color: hsl(205, 30%, 27%);
+        font-size: 24px;
+    }
+    .current-turn {
+        color: black;
+        font-size: 13px;
+        letter-spacing: 5px;
+        margin-top: 20px;
+    }
+
+    #endWrapper {
+        background-color: white;
+        padding: 30px;
+        width: 350px;
+    }
+    .end-stat-wrapper, .player-stat-wrapper {
+        background-color: hsl(203, 25%, 90%);
+        width: 100%;
+        padding: 16px;
+        margin: 5px 0;
+    }
+    .end-stat-wrapper {
+        display: flex;
+    }
+    #endBtnFlex {
+        margin-top: 18px;
+        width: 100%;
+        height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 16px;
+    }
+    #endTitle {
+        color: hsl(206, 45%, 15%);
+        font-size: 26px;
+    }
+    .end-txt {
+        font-size: 14px;
+    }
+    .end-margins {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-height: 700px) {
+    #navBar {
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+    #circlesContainer {
+        margin-bottom: 20px;
+    }
+}
