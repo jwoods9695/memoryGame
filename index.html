@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/515deb5b82.js" crossorigin="anonymous"></script>
+    <title>Memory Game | Jwoods</title>
+</head>
+<body id="body">
+    <div id="mobileMenu">
+        <div id="mobileWrapper">
+            <button id="mobileRestartBtn" onclick="restartGame()">Restart</button>
+            <button class="mobile-grey-btns" onclick="newGame()">New Game</button>
+            <button class="mobile-grey-btns" onclick="resumeGame()">Resume Game</button>
+        </div>
+    </div>
+
+    <div id="endModal">
+        <div id="endWrapper">
+            <div id="endTitle">You did it!</div>
+            <div class="end-txt end-margins">Game over! Here's how you got on...</div>
+
+            <div class="end-stat-wrapper">
+                <div class="end-txt">Time Elapsed</div>
+                <div class="end-stat-txt" id="endTimeText">1:22</div>
+            </div>
+            <div class="end-stat-wrapper">
+                <div class="end-txt">Moves Taken</div>
+                <div class="end-stat-txt" id="endMovesText">23 Moves</div>
+            </div>
+
+            <div class="player-stat-wrapper">
+                <div class="player-end-txt">Player 1</div>
+                <div class="player-stat-txt"><span class="player-pairs">0</span> Pairs</div>
+            </div>
+            <div class="player-stat-wrapper">
+                <div class="player-end-txt">Player 2</div>
+                <div class="player-stat-txt"><span class="player-pairs">0</span> Pairs</div>
+            </div>
+            <div class="player-stat-wrapper">
+                <div class="player-end-txt">Player 3</div>
+                <div class="player-stat-txt"><span class="player-pairs">0</span> Pairs</div>
+            </div>
+            <div class="player-stat-wrapper">
+                <div class="player-end-txt">Player 4</div>
+                <div class="player-stat-txt"><span class="player-pairs">0</span> Pairs</div>
+            </div>
+
+            <div id="endBtnFlex">
+                <button id="endRestartBtn" onclick="restartGame()">Restart</button>
+                <button id="endNewGame" onclick="newGame()">Setup New Game</button>
+            </div>
+
+        </div> <!--wrapper-->
+    </div> <!--modal-->
+
+    <div id="menuTitle">memory</div>
+
+    <div id="menuContainer">
+        <div class="menu-label">Select Theme</div>
+
+        <div class="select-container">
+            <div class="menu-big-wrappers active-wrappers" id="selectNumbers" onclick="setNumbers()">Numbers</div>
+            <div class="menu-big-wrappers disabled-wrappers" id="selectIcons" onclick="setIcons()">Icons</div>
+        </div>
+
+        <div class="menu-label">Numbers of Players</div>
+
+        <div class="num-players-container">
+            <div class="menu-small-wrappers active-wrappers">1</div>
+            <div class="menu-small-wrappers disabled-wrappers">2</div>
+            <div class="menu-small-wrappers disabled-wrappers">3</div>
+            <div class="menu-small-wrappers disabled-wrappers">4</div>
+        </div>
+
+        <div class="menu-label">Grid Size</div>
+
+        <div class="select-container">
+            <div class="menu-big-wrappers active-wrappers" id="select4x4" onclick="set4x4()">4x4</div>
+            <div class="menu-big-wrappers disabled-wrappers" id="select6x6" onclick="set6x6()">6x6</div>
+        </div>
+
+        <button id="startGame" onclick="startGame()">Start Game</button>
+    </div>
+
+
+    <div id="gameContainer">
+        <div id="navBar">
+            <div id="gameTitle">memory</div>
+
+            <div id="navBtnFlex">
+                <button id="restartBtn" onclick="restartGame()">Restart</button>
+                <button id="newGameBtn" onclick="newGame()">New Game</button>
+                <button id="mobileMenuBtn" onclick="displayMobileMenu()">Menu</button>
+            </div> <!--nav btn flex-->
+        </div> <!--nav bar-->
+
+        <div id="circlesContainer">
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>           
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+            <div class="circle-inside"><span class="circle-text">3</span><div class="circle-outside"></div></div>
+        </div>
+
+        <div id="singleplayerStats">
+            <div id="timeWrapper">
+                <div class="stats-label">Time</div>
+                <div class="stats-data" id="timerText">0:00</div>
+            </div>
+
+            <div id="movesWrapper">
+                <div class="stats-label">Moves</div>
+                <div class="stats-data" id="moveText">0</div>
+            </div>
+        </div>
+
+        <div id="multiPlayerStats">
+        <div class="player-coll">
+            <div class="player-triangle"></div>
+            <div class="player-wrapper">
+                <div class="player-label">Player 1</div>
+                <div class="player-number">0</div>
+            </div>
+            <div class="current-turn">CURRENT TURN</div>
+        </div>
+        <div class="player-coll">
+            <div class="player-triangle"></div>
+            <div class="player-wrapper">
+                <div class="player-label">Player 2</div>
+                <div class="player-number">0</div>
+            </div>
+            <div class="current-turn">CURRENT TURN</div>
+        </div>
+        <div class="player-coll" style="display: flex;">
+            <div class="player-triangle"></div>
+            <div class="player-wrapper">
+                <div class="player-label">Player 3</div>
+                <div class="player-number">0</div>
+            </div>
+            <div class="current-turn">CURRENT TURN</div>
+        </div>
+        <div class="player-coll">
+            <div class="player-triangle"></div>
+            <div class="player-wrapper">
+                <div class="player-label">Player 4</div>
+                <div class="player-number">0</div>
+            </div>
+            <div class="current-turn">CURRENT TURN</div>
+        </div>
+        </div>
+        <!--
+        <div id="currentTurnFlex">
+            <div class="current-turn">CURRENT TURN</div>
+            <div class="current-turn">CURRENT TURN</div>
+            <div class="current-turn">CURRENT TURN</div>
+            <div class="current-turn">CURRENT TURN</div>
+        </div> -->
+
+    </div><!--game container-->
+
+    <div id="nothing"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
